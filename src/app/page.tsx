@@ -1,5 +1,7 @@
 
+
 import Appbar from "@/components/Appbar";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 
 export default function Page() {
@@ -7,6 +9,7 @@ export default function Page() {
     <div>
       <Appbar />
       <Hero/>
+      <Footer/>
     </div>
   )
 }

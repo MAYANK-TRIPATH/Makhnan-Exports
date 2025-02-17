@@ -1,13 +1,12 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function Hero() {
   const images = [
-    "/example.png",
-    "/example1.png",
-    "/example2.png",
-    "/example3.png"
+    "/example1.jpg",
+    "/example2.jpg"
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -25,7 +24,8 @@ export default function Hero() {
       <h1 className="text-4xl md:text-5xl font-bold">
         Welcome to <span className="bg-green-400 px-2 py-1 rounded-lg">Kesarwani Exports</span>
       </h1>
-      <p className="text-lg md:text-xl mt-6">
+      <p className="text-lg md:text-xl mt-6 w-[60%] mx-auto">
+        We are a company that exports products from India to the world.
         We are a company that exports products from India to the world.
       </p>
       <div className="relative rounded-2xl overflow-hidden border-4 border-green-500 shadow-2xl w-full max-w-4xl mt-6">
@@ -38,9 +38,11 @@ export default function Hero() {
           priority
         />
       </div>
-      <button className="bg-green-600 hover:bg-green-700 px-6 py-2 rounded-md mt-10 text-white">
-        Get Started
+      <Link href="/products">
+      <button className="bg-green-600 hover:bg-green-700 px-6 py-2 rounded-md mt-10 text-white mb-8">
+        Explore Products
       </button>
+      </Link>
     </div>
   );
 }
