@@ -14,7 +14,7 @@ export default function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); 
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [images.length]);
@@ -39,10 +39,31 @@ export default function Hero() {
         />
       </div>
       <Link href="/products">
-      <button className="bg-green-600 hover:bg-green-700 px-6 py-2 rounded-md mt-10 text-white mb-8">
-        Explore Products
-      </button>
+        <button className="bg-green-600 hover:bg-green-700 px-6 py-2 rounded-md mt-10 text-white mb-8">
+          Explore Products
+        </button>
       </Link>
+      <div className="max-w-5xl mx-auto px-6 py-12">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+
+          <div>
+            <Image
+              src="/example1.jpg"
+              alt="About"
+              width={500}
+              height={300}
+              className="w-full h-auto object-cover border-4 border-black rounded-lg shadow-lg"
+            />
+          </div>
+
+          <div className="space-y-2">
+            <p className="text-lg leading-relaxed">
+              At <b>Kesharwani Exports</b>, we take pride in being a leading exporter of <b>premium-quality Makhana (Fox Nuts)</b> , bringing the rich flavors and nutritional goodness of India to the global market. With a deep commitment to <b>purity, sustainability, and excellence,</b> we carefully source the finest Makhana from trusted farmers, ensuring unmatched taste and quality in every bite.
+              Join us in embracing the goodness of this superfood as we deliver <b> health and tradition straight to your doorstep wherever you are in the world!</b>.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
