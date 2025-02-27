@@ -17,7 +17,6 @@ export default function About() {
               className="w-full h-auto object-cover border-4 border-black rounded-lg shadow-lg"
             />
           </div>
-
           
           <div className="space-y-6">
             <h1 className="text-4xl font-extrabold text-gray-900">

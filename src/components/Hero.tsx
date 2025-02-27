@@ -20,7 +20,7 @@ export default function Hero() {
   }, [images.length]);
 
   return (
-    <div className="flex flex-col items-center justify-center text-center mt-20 px-4">
+    <div className="flex flex-col items-center justify-center text-center mt-24 px-4">
       <h1 className="text-4xl md:text-5xl font-bold">
         Welcome to <span className="bg-green-400 px-2 py-1 rounded-lg">Kesarwani Exports</span>
       </h1>

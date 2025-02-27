@@ -1,35 +1,118 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 export default function Appbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const closeMenu = () => setIsMenuOpen(false);
+
   return (
-    <div className="bg-gray-900 text-white flex justify-between items-center py-4 px-8 shadow-2xl ">
-      <div className="flex items-center gap-4">
-        <h1 className="font-bold text-2xl">Kesarwani Exports</h1>
-      </div>
+    <>
+      <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-white/80 backdrop-blur-lg shadow-lg rounded-full px-6 py-2 z-40 max-w-4xl w-[95%] md:w-[90%] flex items-center justify-between overflow-hidden">
+        
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/Logo.png"
+            width={150}
+            height={40}
+            alt="Logo"
+            className="cursor-pointer w-32 md:w-40"
+          />
+        </Link>
 
-    
-      <button
-        className="block lg:hidden"
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-      >
-        <Menu size={24} />
-      </button>
+       
+        <div className="hidden md:flex space-x-8">
+          <Link
+            href="/"
+            className="text-gray-800 hover:text-blue-400 transition-colors duration-200 font-semibold"
+          >
+            Home
+          </Link>
+          <Link
+            href="/about"
+            className="text-gray-800 hover:text-blue-400 transition-colors duration-200 font-semibold "
+          >
+            About
+          </Link>
+          <Link
+            href="/products"
+            className="text-gray-800 hover:text-blue-400 transition-colors duration-200 font-semibold"
+          >
+            Products
+          </Link>
+          <Link
+            href="/contact"
+            className="text-gray-800 hover:text-blue-400 transition-colors duration-200 font-semibold"
+          >
+            Contact
+          </Link>
+        </div>
 
+        
+        <button
+          className="md:hidden text-gray-800 p-2"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+      </nav>
+
+      
+      {isMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-md transition-opacity duration-300 z-50"
+          onClick={closeMenu}
+        />
+      )}
+
+      {/* Mobile Sidebar Menu */}
       <div
-        className={`${
-          isMenuOpen ? "absolute top-16 right-8 shadow-md rounded-lg flex" : "hidden"
-        } flex-col gap-4 p-4 lg:flex lg:relative lg:flex-row lg:gap-6 lg:p-0 lg:shadow-none lg:bg-transparent bg-gray-700 w-fit`}
+        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 z-50 ${
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
       >
-        <Link href="/" className="hover:underline">Home</Link>
-        <Link href="/about" className=" hover:underline">About</Link>
-        <Link href="/products" className="hover:underline">Products</Link>
-        <Link href="/contact" className=" hover:underline">Contact</Link>
+        <button
+          className="absolute top-4 right-4 text-gray-800 p-2"
+          onClick={closeMenu}
+          aria-label="Close menu"
+        >
+          <X size={28} />
+        </button>
+        <div className="mt-16 space-y-6 px-6">
+          <Link
+            href="/"
+            onClick={closeMenu}
+            className="block text-gray-800 hover:text-blue-400 transition-colors duration-200 font-medium text-lg"
+          >
+            Home
+          </Link>
+          <Link
+            href="/about"
+            onClick={closeMenu}
+            className="block text-gray-800 hover:text-blue-400 transition-colors duration-200 font-medium text-lg"
+          >
+            About
+          </Link>
+          <Link
+            href="/products"
+            onClick={closeMenu}
+            className="block text-gray-800 hover:text-blue-400 transition-colors duration-200 font-medium text-lg"
+          >
+            Products
+          </Link>
+          <Link
+            href="/contact"
+            onClick={closeMenu}
+            className="block text-gray-800 hover:text-blue-400 transition-colors duration-200 font-medium text-lg"
+          >
+            Contact
+          </Link>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
