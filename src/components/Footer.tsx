@@ -73,9 +73,9 @@ export default function Footer() {
           {/* Contact Info */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-            <p className="mb-2">Email: info@example.com</p>
-            <p className="mb-2">Phone: +1 (123) 456-7890</p>
-            <p>Address: 123 Main St, City, Country</p>
+            <p className="mb-2">Email: keshariexports02@gmail.com</p>
+            <p className="mb-2">Phone: +91 9452783490, 8696204335</p>
+            <p>Address: Prayagraj, Uttar Pradesh</p>
           </div>
         </div>
 
