@@ -7,8 +7,8 @@ export default function About() {
     <div className="min-h-screen">
       <Appbar />
       {/* About Us */}
-      <div className="max-w-5xl mx-auto px-6 py-12 mt-12">
-        <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">
+      <div className="max-w-5xl mx-auto px-6 py-12 mt-12 flex flex-col items-center justify-center">
+        <h1 className="text-4xl font-bold text-center text-gray-800 mb-8 bg-green-400 p-2 rounded-lg max-w-fit">
           About Us
         </h1>
         <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -34,8 +34,8 @@ export default function About() {
       </div>
 
       {/* What We Do */}
-      <div className="px-4 sm:px-8 md:px-16 lg:px-24">
-        <h1 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mt-12 sm:mt-16">
+      <div className="px-4 sm:px-8 md:px-16 lg:px-24 flex flex-col items-center justify-center">
+        <h1 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mt-12 mb-10 sm:mt-16 bg-green-400 p-2 rounded-lg max-w-fit">
           What We Do
         </h1>
         <p className="text-base sm:text-lg leading-relaxed text-center sm:text-left mx-auto mt-4 sm:mt-2 max-w-3xl">
@@ -54,16 +54,16 @@ export default function About() {
 
 
       {/* Our Mission  */}
-      <div>
-        <h1 className="text-4xl font-bold text-center text-gray-800 mt-16 mb-2">
+      <div className="flex flex-col items-center justify-center">
+        <h1 className="text-4xl font-bold text-center text-gray-800 mt-16 mb-2 bg-green-400 p-2 rounded-lg max-w-fit">
           Our Mission
         </h1>
         <p className="text-lg leading-relaxed w-[80%] mx-auto mb-8">
-          To connect international buyers with India's finest Makhana through ethical sourcing, transparent trade, and seamless logistics.
+          To connect international buyers with India&apos;s finest Makhana through ethical sourcing, transparent trade, and seamless logistics.
         </p>
       </div>
-      <div>
-        <h1 className="text-4xl font-bold text-center text-gray-800 mt-8 mb-2">
+      <div className="flex flex-col items-center justify-center">
+        <h1 className="text-4xl font-bold text-center text-gray-800 mt-8 mb-2 bg-green-400 p-2 rounded-lg">
           Registered With
         </h1>
         <div className="flex flex-wrap justify-center items-center gap-4 rounded-2xl overflow-hidden border-4 border-green-500 shadow-2xl w-fit max-w-5xl mx-auto mt-6 p-4 mb-6">

@@ -1,5 +1,6 @@
 import Appbar from "@/components/Appbar";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 
 export default function examplePage() {
     const examples = [
@@ -28,8 +29,8 @@ export default function examplePage() {
     return (
         <div>
             <Appbar />
-            <div className="mx-auto px-4 py-12">
-                <h1 className="text-4xl font-bold text-center mb-4 mt-16">Our examples</h1>
+            <div className="mx-auto px-4 py-12 flex flex-col items-center justify-center">
+                <h1 className="text-4xl font-bold text-center mb-4 mt-16 bg-green-400 p-2 rounded-lg">Our Products</h1>
                 <p className="text-lg text-center  mb-8">
                     Discover our range of high-quality examples designed to enhance your experience.
                 </p>
@@ -40,9 +41,11 @@ export default function examplePage() {
                             key={index}
                             className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105 mb-8"
                         >
-                            <img
+                            <Image
                                 src={example.image}
                                 alt={example.title}
+                                width={500}
+                                height={300}
                                 className="w-full h-48 object-cover"
                             />
                             <div className="p-4">
