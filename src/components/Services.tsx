@@ -1,61 +1,63 @@
-import React from 'react';
+import Footer from "@/components/Footer";
+import Image from "next/image";
 
-interface ServiceCardProps {
-  title: string;
-  description: string;
-  icon: string; 
-}
+export default function Services() {
+    const examples = [
+        {
+            title: "Premium Quality",
+            description: "Handpicked for superior taste, texture, and nutrition.",
+            image: "/Makhana.jpg",
+        },
+        {
+            title: "Fast and Reliable Delivery",
+            description: " Ensuring timely shipments with trusted logistics partners.",
+            image: "/Delivery.jpeg",
+        },
+        {
+            title: "Ethically Sourced",
+            description: "Sustainably harvested from trusted farmers with fair trade practices.",
+            image: "/sourced.jpg",
+        },
+        {
+          title: "Global Reach",
+          description: "Supplying top-quality Makhana to markets worldwide. ",
+          image: "/global.jpg",
+      }
+       
+    ];
 
+    return (
+        <div>
+            <div className="max-w-7xl mx-auto px-6  flex flex-col items-center text-center">
+                <h1 className="font-bold text-4xl sm:text-5xl md:text-6xl mb-8 text-black text-center ">
+                    Why Choose Us
+                </h1>
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon }) => {
-  return (
-    <div className="group relative bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:scale-105">
-      <div className="p-6">
-        <div className="text-4xl mb-4 text-indigo-600">{icon}</div>
-        <h3 className="text-xl font-bold mb-2 text-gray-800">{title}</h3>
-        <p className="text-gray-600">{description}</p>
-      </div>
-    </div>
-  );
-};
-
-
-const Services: React.FC = () => {
-  const services = [
-    {
-      title: 'Export',
-      description: 'We specialize in exporting high-quality Makhana to customers worldwide, ensuring timely delivery and premium packaging.',
-      icon: '📤', 
-    },
-    {
-      title: 'Import',
-      description: 'Our import services bring the finest Makhana from global sources to your doorstep, maintaining the highest standards of quality.',
-      icon: '📥',
-    },
-    {
-      title: 'Transport',
-      description: 'Efficient and reliable transportation services for Makhana, ensuring it reaches its destination in perfect condition.',
-      icon: '🚚', 
-    },
-    {
-      title: 'Transport',
-      description: 'Efficient and reliable transportation services for Makhana, ensuring it reaches its destination in perfect condition.',
-      icon: '🚚', 
-    },
-  ];
-
-  return (
-    <div className="py-12 bg-[#d0cccc]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">Why Choose Us</h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {services.map((service, index) => (
-            <ServiceCard key={index} title={service.title} description={service.description} icon={service.icon} />
-          ))}
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                    {examples.map((example, index) => (
+                        <div
+                            key={index}
+                            className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105 mb-8"
+                        >
+                            <Image
+                                src={example.image}
+                                alt={example.title}
+                                width={500}
+                                height={300}
+                                className="w-full h-48 object-cover"
+                            />
+                            <div className="p-4">
+                                <h2 className="text-xl font-semibold">{example.title}</h2>
+                                <p className="mt-2">
+                                    {example.description}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+            <Footer />
         </div>
-      </div>
-    </div>
-  );
-};
 
-export default Services;
+    );
+}

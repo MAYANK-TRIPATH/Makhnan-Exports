@@ -11,7 +11,7 @@ export default function Appbar() {
 
   return (
     <>
-      <nav className="fixed left-1/2 -translate-x-1/2 backdrop-blur-lg shadow-lg rounded-2xl px-6 py-2 z-10  w-[95%] md:w-[90%] flex items-center justify-between overflow-hidden">
+      <nav className=" bg-white backdrop-blur-lg shadow-lg  px-6 py-2 z-10   flex items-center justify-between overflow-hidden">
         
         <Link href="/" className="flex items-center">
           <Image
@@ -39,13 +39,13 @@ export default function Appbar() {
           </Link>
           <Link
             href="/products"
-            className="text-lgtext-black hover:text-red-400 transition-colors duration-200 font-semibold"
+            className="text-lg text-black hover:text-red-400 transition-colors duration-200 font-semibold"
           >
             Products
           </Link>
           <Link
             href="/contact"
-            className="text-lgtext-black hover:text-red-400 transition-colors duration-200 font-semibold"
+            className="text-lg text-black hover:text-red-400 transition-colors duration-200 font-semibold"
           >
             Contact
           </Link>

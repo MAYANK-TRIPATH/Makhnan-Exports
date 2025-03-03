@@ -5,8 +5,9 @@ import { useState, useEffect } from "react";
 
 export default function Hero() {
   const images = [
-    "/example1.jpg",
-    "/example2.jpg"
+    "/roasted-makhana.webp",
+    "/example2.jpg",
+    "/Makhana.jpg"
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
