@@ -11,7 +11,7 @@ export default function Appbar() {
 
   return (
     <>
-      <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-white/80 backdrop-blur-lg shadow-lg rounded-full px-6 py-2 z-40 max-w-4xl w-[95%] md:w-[90%] flex items-center justify-between overflow-hidden">
+      <nav className="fixed left-1/2 -translate-x-1/2 backdrop-blur-lg shadow-lg rounded-2xl px-6 py-2 z-10  w-[95%] md:w-[90%] flex items-center justify-between overflow-hidden">
         
         <Link href="/" className="flex items-center">
           <Image
@@ -27,25 +27,25 @@ export default function Appbar() {
         <div className="hidden md:flex space-x-8">
           <Link
             href="/"
-            className="text-gray-800 hover:text-blue-400 transition-colors duration-200 font-semibold"
+            className="text-lg text-black hover:text-red-400 transition-colors duration-200 font-semibold"
           >
             Home
           </Link>
           <Link
             href="/about"
-            className="text-gray-800 hover:text-blue-400 transition-colors duration-200 font-semibold "
+            className="text-lg text-black hover:text-red-400 transition-colors duration-200 font-semibold "
           >
             About
           </Link>
           <Link
             href="/products"
-            className="text-gray-800 hover:text-blue-400 transition-colors duration-200 font-semibold"
+            className="text-lgtext-black hover:text-red-400 transition-colors duration-200 font-semibold"
           >
             Products
           </Link>
           <Link
             href="/contact"
-            className="text-gray-800 hover:text-blue-400 transition-colors duration-200 font-semibold"
+            className="text-lgtext-black hover:text-red-400 transition-colors duration-200 font-semibold"
           >
             Contact
           </Link>
@@ -53,7 +53,7 @@ export default function Appbar() {
 
         
         <button
-          className="md:hidden text-gray-800 p-2"
+          className="md:hidden text-black p-2"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -76,7 +76,7 @@ export default function Appbar() {
         }`}
       >
         <button
-          className="absolute top-4 right-4 text-gray-800 p-2"
+          className="absolute top-4 right-4 text-black p-2"
           onClick={closeMenu}
           aria-label="Close menu"
         >
@@ -86,28 +86,28 @@ export default function Appbar() {
           <Link
             href="/"
             onClick={closeMenu}
-            className="block text-gray-800 hover:text-blue-400 transition-colors duration-200 font-medium text-lg"
+            className="block text-black hover:text-red-400 transition-colors duration-200 font-medium text-lg"
           >
             Home
           </Link>
           <Link
             href="/about"
             onClick={closeMenu}
-            className="block text-gray-800 hover:text-blue-400 transition-colors duration-200 font-medium text-lg"
+            className="block text-black hover:text-red-400 transition-colors duration-200 font-medium text-lg"
           >
             About
           </Link>
           <Link
             href="/products"
             onClick={closeMenu}
-            className="block text-gray-800 hover:text-blue-400 transition-colors duration-200 font-medium text-lg"
+            className="block text-black hover:text-red-400 transition-colors duration-200 font-medium text-lg"
           >
             Products
           </Link>
           <Link
             href="/contact"
             onClick={closeMenu}
-            className="block text-gray-800 hover:text-blue-400 transition-colors duration-200 font-medium text-lg"
+            className="block text-black hover:text-red-400 transition-colors duration-200 font-medium text-lg"
           >
             Contact
           </Link>
