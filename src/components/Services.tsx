@@ -36,14 +36,14 @@ export default function Services() {
                     {examples.map((example, index) => (
                         <div
                             key={index}
-                            className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105 mb-8"
+                            className="shadow-lg rounded-xl overflow-hidden transition-transform transform hover:scale-105 mb-24"
                         >
                             <Image
                                 src={example.image}
                                 alt={example.title}
                                 width={500}
                                 height={300}
-                                className="w-full h-48 object-cover"
+                                className="w-full h-56 object-cover"
                             />
                             <div className="p-4">
                                 <h2 className="text-xl font-semibold">{example.title}</h2>

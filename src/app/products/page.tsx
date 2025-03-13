@@ -6,17 +6,17 @@ export default function Page() {
     const examples = [
         {
             title: "Organic Raw Makhana",
-            description: " Naturally grown and unprocessed, our organic raw Makhana retains its authentic taste and nutritional benefits. Perfect for health-conscious consumers and versatile for various recipes.",
+            description: "Naturally grown and unprocessed, our organic raw Makhana retains its authentic taste and nutritional benefits. Perfect for health-conscious consumers and versatile for various recipes.",
             image: "/Makhana.jpg",
         },
         {
             title: "Roasted Makhana",
-            description: " Lightly roasted to perfection, this crunchy and nutritious snack is a guilt-free alternative to traditional fried snacks. Rich in protein and fiber, it's ideal for everyday snacking.",
+            description: "Lightly roasted to perfection, this crunchy and nutritious snack is a guilt-free alternative to traditional fried snacks. Rich in protein and fiber, it's ideal for everyday snacking.",
             image: "/roasted-makhana.webp",
         },
         {
             title: "Spicy Flavored Makhana",
-            description: " A bold twist on the classic Makhana, infused with a perfect blend of spices for a zesty kick. A delicious and healthy option for those who crave flavorful, crunchy treats.",
+            description: "A bold twist on the classic Makhana, infused with a perfect blend of spices for a zesty kick. A delicious and healthy option for those who crave flavorful, crunchy treats.",
             image: "/masala-makhana.jpg",
         },
         {
@@ -27,32 +27,42 @@ export default function Page() {
     ];
 
     return (
-        <div>
+        <div className="min-h-screen flex flex-col bg-gray-50">
             <Appbar />
-            <div className="max-w-7xl mx-auto px-6 py-16 flex flex-col items-center text-center">
-                <h1 className="font-bold text-4xl sm:text-5xl md:text-6xl mb-4 text-black text-center mt-8">
+
+            {/* Hero Section */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+                <h1 className="font-bold text-4xl sm:text-5xl md:text-6xl text-gray-900 mb-6">
                     Our Products
                 </h1>
-                <p className="text-lg sm:text-xl leading-relaxed mb-4">
-                    Discover our range of high-quality examples designed to enhance your experience.
+                <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    Discover our range of high-quality Makhana products designed to enhance your experience with authentic taste and premium quality.
                 </p>
+            </div>
 
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {/* Product Grid Section */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {examples.map((example, index) => (
                         <div
                             key={index}
-                            className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105 mb-8"
+                            className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
                         >
-                            <Image
-                                src={example.image}
-                                alt={example.title}
-                                width={500}
-                                height={300}
-                                className="w-full h-48 object-cover"
-                            />
-                            <div className="p-4">
-                                <h2 className="text-xl font-semibold">{example.title}</h2>
-                                <p className="mt-2">
+                            {/* Image Container */}
+                            <div className="relative h-60 w-full">
+                                <Image
+                                    src={example.image}
+                                    alt={example.title}
+                                    fill
+                                    className="object-cover"
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                />
+                            </div>
+                            <div className="p-6">
+                                <h2 className="text-xl font-bold text-gray-900 mb-3">
+                                    {example.title}
+                                </h2>
+                                <p className="text-gray-600 leading-relaxed">
                                     {example.description}
                                 </p>
                             </div>
@@ -60,8 +70,8 @@ export default function Page() {
                     ))}
                 </div>
             </div>
+
             <Footer />
         </div>
-
     );
 }
