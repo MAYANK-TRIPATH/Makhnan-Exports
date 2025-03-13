@@ -58,7 +58,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gray-50">
       <Appbar />
       <div className="flex-1 flex items-center justify-center p-6 mt-12">
         <div className="bg-white p-8 rounded-xl shadow-2xl w-full max-w-lg border border-gray-100">

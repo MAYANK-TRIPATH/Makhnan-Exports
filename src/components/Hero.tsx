@@ -34,7 +34,7 @@ export default function Hero() {
         />
        
        
-        <div className="absolute inset-0 bg-black/40 flex flex-col items-start justify-center sm:px-12 md:px-16 lg:px-24">
+        <div className="absolute inset-0 flex flex-col items-start justify-center sm:px-12 md:px-16 lg:px-24">
           
           <div className="text-left max-w-[90%] sm:max-w-[80%] md:max-w-[70%]">
             
